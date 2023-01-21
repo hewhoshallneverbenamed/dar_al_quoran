@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Center;
+use App\Teacher;
+use App\CenterTeacherStudent;
 use Illuminate\Http\Request;
 
 /**
@@ -92,6 +94,14 @@ class CenterController extends Controller
 
         return redirect()->route('centers.index')
             ->with('success', 'Center updated successfully');
+    }
+
+    public function addTeacher(Teacher $teacher, Center $center)
+    {
+        //$centerTeacherStudent = new CenterTeacherStudent();
+        // $center->teachers()
+        // return redirect()->route('centers.index')
+        //         ->with('success', 'Center updated successfully');
     }
 
     /**

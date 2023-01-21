@@ -38,15 +38,15 @@ class QuranSession extends Model
      */
     public function centerTeacherStudent()
     {
-        return $this->hasOne('App\CenterTeacherStudent', 'id', 'center_teacher_student_id');
+        return $this->hasMany('App\CenterTeacherStudent', 'id', 'center_teacher_student_id');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function revisions()
+    public function revision()
     {
-        return $this->hasMany('App\Revision', 'session_id', 'id');
+        return $this->hasOne('App\Revision', 'session_id', 'id');
     }
     
 

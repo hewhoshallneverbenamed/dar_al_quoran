@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl">
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,11 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="resources/css/scss/custom.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @vite(['resources/css/scss/custom.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('css/scss/custom.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 
 <body class="font-sans antialiased">

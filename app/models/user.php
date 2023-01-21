@@ -56,16 +56,16 @@ class User extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function students()
+    public function student()
     {
-        return $this->hasMany('App\Student', 'user_id', 'id');
+        return $this->hasOne('App\Student', 'user_id', 'id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function teachers()
+    public function teacher()
     {
-        return $this->hasMany('App\Teacher', 'user_id', 'id');
+        return $this->hasOne('App\Teacher', 'user_id', 'id');
     }
 }

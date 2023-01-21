@@ -46,6 +46,7 @@ class TeacherController extends Controller
         request()->validate(Teacher::$rules);
 
         $teacher = Teacher::create($request->all());
+        // $cts = 
 
         return redirect()->route('teachers.index')
             ->with('success', 'Teacher created successfully.');

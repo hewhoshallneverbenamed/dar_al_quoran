@@ -55,10 +55,10 @@ class Student extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\
      */
-    // public function ()
-    // {
-    //     return $this->('App\CenterTeacherStudent', 'student_id', 'id');
-    // }
+    public function centerTeacherStudents()
+    {
+        return $this->hasMany('App\CenterTeacherStudent', 'student_id', 'id');
+    }
         
 
 }

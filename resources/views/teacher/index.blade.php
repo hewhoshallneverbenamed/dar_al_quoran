@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Teacher') }}
+                                {{ __('معلم') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('teachers.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('معلم جديد') }}
                                 </a>
                               </div>
                         </div>
@@ -34,13 +34,13 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>رقم</th>
                                         
-										<th>User Id</th>
-										<th>First Name</th>
-										<th>Middle Name</th>
-										<th>Last Name</th>
-										<th>Mobile Number</th>
+										<!-- <th>User Id</th> -->
+										<th>الاسم</th>
+										<th>اسم الأب</th>
+										<th>الكنية</th>
+										<th>رقم الهاتف</th>
 
                                         <th></th>
                                     </tr>
@@ -50,7 +50,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $teacher->user_id }}</td>
+											<!-- <td>{{ $teacher->user_id }}</td> -->
 											<td>{{ $teacher->first_name }}</td>
 											<td>{{ $teacher->middle_name }}</td>
 											<td>{{ $teacher->last_name }}</td>
@@ -58,11 +58,11 @@
 
                                             <td>
                                                 <form action="{{ route('teachers.destroy',$teacher->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('teachers.show',$teacher->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('teachers.edit',$teacher->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('teachers.show',$teacher->id) }}"><i class="fa fa-fw fa-eye"></i> مشاهدة</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('teachers.edit',$teacher->id) }}"><i class="fa fa-fw fa-edit"></i> تعديل</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> مسح</button>
                                                 </form>
                                             </td>
                                         </tr>

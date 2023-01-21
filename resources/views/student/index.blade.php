@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Student') }}
+                                {{ __('تلميذ') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('students.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('تلميذ جديد') }}
                                 </a>
                               </div>
                         </div>
@@ -34,32 +34,32 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>رقم</th>
                                         
-										<th>User Id</th>
-										<th>Is Ring</th>
-										<th>First Name</th>
-										<th>Middle Name</th>
-										<th>Last Name</th>
-										<th>Mother Name</th>
-										<th>Gender</th>
-										<th>Nationality</th>
-										<th>Birth Date</th>
-										<th>Martial Status</th>
-										<th>School Uni</th>
-										<th>Current Job</th>
-										<th>Mobile Number</th>
-										<th>Work Number</th>
-										<th>Home Number</th>
-										<th>Sheiks Name</th>
-										<th>Address</th>
-										<th>Level</th>
-										<th>Suitable Times Days</th>
-										<th>Female Question</th>
-										<th>Has Ijaza</th>
-										<th>Father Number</th>
-										<th>Mother Number</th>
-										<th>Skills</th>
+										<!-- <th>User Id</th> -->
+										<th>في حلقة</th>
+										<th>الاسم</th>
+										<th>اسم الأب</th>
+										<th>الكنية</th>
+										<th>اسم الأم</th>
+										<th>لاجنس</th>
+										<th>الجنسية</th>
+										<th>تاريخ الولادة</th>
+										<th>حالة اجتماعية</th>
+										<th>المدرسة او الجامعة</th>
+										<th>الوظيفة</th>
+										<th>رقم الهاتف</th>
+										<th>رقم هاتف العمل</th>
+										<th>رقم المنزل</th>
+										<th>اسم المعلم</th>
+										<th>السكن</th>
+										<th>المستوى</th>
+										<th>الايام المناسبة</th>
+										<th>تقبل بمعلم</th>
+										<th>معه اجازة</th>
+										<th>هاتف الأب</th>
+										<th>هاتف الأم</th>
+										<th>مهارات</th>
 
                                         <th></th>
                                     </tr>
@@ -69,7 +69,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $student->user_id }}</td>
+											<!-- <td>{{ $student->user_id }}</td> -->
 											<td>{{ $student->is_ring }}</td>
 											<td>{{ $student->first_name }}</td>
 											<td>{{ $student->middle_name }}</td>
@@ -96,11 +96,11 @@
 
                                             <td>
                                                 <form action="{{ route('students.destroy',$student->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('students.show',$student->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('students.edit',$student->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('students.show',$student->id) }}"><i class="fa fa-fw fa-eye"></i> مشاهدة</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('students.edit',$student->id) }}"><i class="fa fa-fw fa-edit"></i> تعديل</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> مسح</button>
                                                 </form>
                                             </td>
                                         </tr>

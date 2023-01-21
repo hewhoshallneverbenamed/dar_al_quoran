@@ -30,13 +30,20 @@ class Center extends Model
      */
     protected $fillable = ['name','location'];
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function centerTeacherStudents()
+    public function Teachers()
     {
-        return $this->hasMany('App\CenterTeacherStudent', 'center_id', 'id');
+        return $this->belongsToMany(Teacher::class)->withPivot('CenterTeacherStudents', 'center_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Students()
+    {
+        return $this->belongsToMany(Student::class)->withPivot('CenterTeacherStudents', 'center_id');
     }
     
 
